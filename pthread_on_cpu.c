@@ -98,7 +98,7 @@ int main()
 
 		CPU_ZERO(&cpuset[i]);
 		CPU_SET(i, &cpuset[i]);
-    	ret = pthread_setaffinity_np(thread[i], sizeof(cpu_set_t), &cpuset[i]);
+    		ret = pthread_setaffinity_np(thread[i], sizeof(cpu_set_t), &cpuset[i]);
 		if (ret != 0) {
 			printf("can not set thread %d affinity, %s\n", i, strerror(errno));
 			break;
